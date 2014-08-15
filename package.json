@@ -1,0 +1,43 @@
+{
+  "name": "rmd",
+  "version": "0.0.1",
+  "description": "A Markdown live editor built with React.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Granze/rmd"
+  },
+  "keywords": [
+    "markdown",
+    "react",
+    "editor"
+  ],
+  "author": "Maurizio Mangione",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Granze/rmd/issues"
+  },
+  "homepage": "https://github.com/Granze/rmd",
+  "dependencies": {
+    "react": "^0.11.1",
+    "ultramarked": "^0.8.0"
+  },
+  "devDependencies": {
+    "browserify": "^5.10.0",
+    "gulp": "^3.8.7",
+    "gulp-autoprefixer": "0.0.8",
+    "gulp-clean": "^0.3.1",
+    "gulp-csso": "^0.2.9",
+    "gulp-jshint": "^1.8.4",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^0.7.3",
+    "gulp-uglify": "^0.3.1",
+    "gulp-webserver": "^0.6.0",
+    "jshint-stylish": "^0.4.0",
+    "reactify": "^0.14.0",
+    "vinyl-transform": "0.0.1"
+  }
+}
