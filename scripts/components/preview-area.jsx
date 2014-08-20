@@ -2,12 +2,20 @@
 
 'use strict';
 
-var React = require('react');
+var React = require('react'),
+    marked = require('ultramarked'),
 
-module.exports = React.createClass({
-  render: function() {
-    return (
+    PreviewArea = React.createClass({
+      render: function() {
+        return (
+          <div
+            className="PreviewArea"
+            dangerouslySetInnerHTML={{
+              __html: marked(this.props.content)
+            }}
+          />
+        );
+      }
+    });
 
-    );
-  }
-});
+module.exports =  PreviewArea;
