@@ -1,3 +1,5 @@
+$c1: #90163a;
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -8,21 +10,66 @@ html, body {
   padding: 0;
 }
 
+body {
+  padding: 50px 20px 20px 20px;
+  font-family: 'Droid Sans', sans-serif;
+  background-color: #777;
+}
+
 #editor {
+  height: 100%;
+}
+
+.container {
   height: 90%;
+  overflow: hidden;
 }
 
 .col {
   float: left;
   height: 100%;
   width: 50%;
+  margin-top: 30px;
 }
 
-.PreviewArea {
-  padding: 20px;
+.Header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  padding: 0 20px;
+  color: #fff;
+  border-bottom: 2px solid darken($c1, 5);
+  background-color: $c1;
+  .small {
+    font-size: 16px;
+    font-weight: normal;
+  }
 }
 
 .InputArea {
   width: 100%;
   height: 100%;
+  padding: 20px;
+  border: none;
+  font-family: 'Droid Sans Mono', Courier;
+  color: #dfdfdf;
+  background-color: #333;
+}
+
+.PreviewArea {
+  height: 100%;
+  padding: 20px;
+  background-color: #fff;
+}
+
+footer {
+  text-align: center;
+  padding-top: 20px;
+  a {
+    color: #fff;
+  }
 }

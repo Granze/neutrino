@@ -9,7 +9,7 @@ var React = require('react'),
 
     Editor = React.createClass({
       getInitialState: function() {
-        return {content: 'aaa'};
+        return {content: '#This is a Markdown editor'};
       },
       handleUserInput: function(content) {
         this.setState({
@@ -18,10 +18,14 @@ var React = require('react'),
       },
       render: function() {
         return (
-          <div>
+          <div className="container">
             <Header />
-            <InputArea content={this.state.content} onUserInput={this.handleUserInput} />
-            <PreviewArea content={this.state.content} />
+            <div className="col">
+              <InputArea content={this.state.content} onUserInput={this.handleUserInput} />
+            </div>
+            <div className="col">
+              <PreviewArea content={this.state.content} />
+            </div>
           </div>
         );
       }

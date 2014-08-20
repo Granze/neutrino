@@ -7,7 +7,7 @@ var React = require('react'),
     Header = React.createClass({
       render: function() {
         return (
-          <h1 className="Header">RMD</h1>
+          <h1 className="Header">RMD <span className="small">A simple Markdown editor built with React JS.</span></h1>
         );
       }
     });
