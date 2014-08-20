@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Granze/rmd",
   "dependencies": {
+    "normalize.css": "https://github.com/appleboy/normalize.scss/archive/3.0.1.tar.gz",
     "react": "^0.11.1",
     "ultramarked": "^0.8.0"
   },
