@@ -2,12 +2,14 @@
 
 'use strict';
 
-var React = require('react');
+var React = require('react'),
 
-module.exports = React.createClass({
-  render: function() {
-    return (
-      <h1 className="Header">RMD</h1>
-    );
-  }
-});
+    Header = React.createClass({
+      render: function() {
+        return (
+          <h1 className="Header">RMD</h1>
+        );
+      }
+    });
+
+module.exports = Header;

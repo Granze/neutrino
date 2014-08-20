@@ -2,7 +2,8 @@
 
 'use strict';
 
-var React = require('react'),
-    Header = require('./components/header.jsx');
+window.React = require('react');
 
-React.renderComponent(<Header />, document.body);
+var Editor = require('./components/editor.jsx');
+
+window.React.renderComponent(<Editor />, document.body);
