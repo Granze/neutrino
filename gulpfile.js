@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     transform = require('vinyl-transform'),
     reactify = require('reactify'),
+    uglify = require('gulp-uglify'),
     clean = require('gulp-clean'),
     rename = require('gulp-rename'),
     webserver = require('gulp-webserver');
@@ -32,6 +33,7 @@ gulp.task('scripts', function () {
   });
   return gulp.src('scripts/app.jsx')
     .pipe(browserified)
+    .pipe(uglify())
     .pipe(rename('app.js'))
     .pipe(gulp.dest('dist/js'));
 });
