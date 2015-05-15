@@ -1,29 +1,23 @@
 {
-  "name": "react-starterify",
-  "version": "0.0.9",
-  "description": "React JS application skeleton using Browserify and other awesome tools",
-  "main": "app.js",
+  "name": "RMD",
+  "version": "0.1.0",
+  "description": "A simple markdown editor built with React JS and wrapped by electron",
+  "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Granze/react-starterify"
+    "url": "https://github.com/Granze/rmd"
   },
   "keywords": [
-    "gulp",
+    "editor",
     "react",
-    "browserify",
-    "seed",
-    "boilerplate",
-    "kickstarter",
-    "ES6",
-    "6to5",
-    "babel"
+    "electron"
   ],
   "author": "Maurizio Mangione",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Granze/react-starterify/issues"
+    "url": "https://github.com/Granze/rmd/issues"
   },
-  "homepage": "https://github.com/Granze/react-starterify",
+  "homepage": "https://github.com/Granze/rmd",
   "dependencies": {
     "react": "^0.13.0",
     "superagent": "^1.0.0"
@@ -33,6 +27,7 @@
     "browser-sync": "^2.2.3",
     "browserify": "^9.0.3",
     "del": "^1.1.1",
+    "electron-prebuilt": "^0.26.0",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "2.1.0",
     "gulp-changed": "^1.2.1",
