@@ -1,3 +1,7 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 $c1: #90163a;
 
 *, *:before, *:after {
@@ -11,9 +15,7 @@ html, body {
 }
 
 body {
-  padding: 50px 20px 20px 20px;
   font-family: 'Droid Sans', sans-serif;
-  background-color: #777;
 }
 
 #editor {
@@ -21,7 +23,7 @@ body {
 }
 
 .container {
-  height: 90%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -32,7 +34,7 @@ body {
   margin-top: 30px;
 }
 
-.Header {
+.toolbar {
   position: absolute;
   left: 0;
   top: 0;
@@ -50,7 +52,7 @@ body {
   }
 }
 
-.InputArea {
+.input-area {
   width: 100%;
   height: 100%;
   padding: 20px;
@@ -60,7 +62,7 @@ body {
   background-color: #333;
 }
 
-.PreviewArea {
+.preview-area {
   height: 100%;
   padding: 20px;
   background-color: #fff;

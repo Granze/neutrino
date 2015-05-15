@@ -1,9 +1,6 @@
-/** @jsx React.DOM */
+import React from 'react';
+import Editor from './components/editor.jsx';
 
-'use strict';
+window.React = React;
 
-window.React = require('react');
-
-var Editor = require('./components/editor.jsx');
-
-window.React.renderComponent(<Editor />, document.body);
+React.render(<Editor />,  document.body);

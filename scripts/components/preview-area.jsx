@@ -1,19 +1,15 @@
-/** @jsx React.DOM */
+import React from 'react';
+import marked from 'ultramarked';
 
-'use strict';
+marked.setOptions({
+  ultrasanitize: true
+});
 
-var React = require('react'),
-    marked = require('ultramarked');
-
-    marked.setOptions({
-      ultrasanitize: true
-    });
-
-var PreviewArea = React.createClass({
+let PreviewArea = React.createClass({
   render: function () {
     return (
       <div
-        className="PreviewArea"
+        className="preview-area"
         dangerouslySetInnerHTML={{
           __html: marked(this.props.content)
         }}

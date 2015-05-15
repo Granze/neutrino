@@ -1,26 +1,22 @@
-/** @jsx React.DOM */
+import React from 'react';
 
-'use strict';
-
-var React = require('react'),
-
-    InputArea = React.createClass({
-      handleChange: function () {
-        this.props.onUserInput (
-          this.refs.textarea.getDOMNode().value
-        );
-      },
-      render: function() {
-        return (
-          <textarea
-            onChange={this.handleChange}
-            ref="textarea"
-            id="input"
-            className="InputArea"
-            defaultValue={this.props.content}
-          />
-        );
-      }
-    });
+let InputArea = React.createClass({
+  handleChange: function () {
+    this.props.onUserInput (
+      this.refs.textarea.getDOMNode().value
+    );
+  },
+  render: function() {
+    return (
+      <textarea
+        onChange={this.handleChange}
+        ref="textarea"
+        id="input"
+        className="input-area"
+        defaultValue={this.props.content}
+      />
+    );
+  }
+});
 
 module.exports = InputArea;
