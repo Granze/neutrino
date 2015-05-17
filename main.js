@@ -1,36 +1,108 @@
-'use babel';
+var app = require('app');
+var BrowserWindow = require('browser-window');
+var dialog = require('dialog');
+var Menu = require('menu');
 
-var app = require('app');  // Module to control application life.
-var BrowserWindow = require('browser-window');  // Module to create native browser window.
-
-// Report crashes to our server.
 require('crash-reporter').start();
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the javascript object is GCed.
 var mainWindow = null;
 
-// Quit when all windows are closed.
 app.on('window-all-closed', function() {
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
-// This method will be called when Electron has done everything
-// initialization and ready for creating browser windows.
-app.on('ready', function() {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600});
+var template = [
+  {
+    label: 'File',
+    submenu: [
+      {
+        label: 'Open',
+        accelerator: 'CommandOrControl+O:',
+        click: function () { app.openFile() }
+      },
+      {
+        type: 'separator'
+      },
+      {
+        label: 'Quit',
+        accelerator: 'CommandOrControl+Q',
+        click: function() { app.quit(); }
+      }
+    ]
+  },
+  {
+    label: 'Edit',
+    submenu: [
+      {
+        label: 'Undo',
+        accelerator: 'CommandOrControl+Z',
+        selector: 'undo:'
+      },
+      {
+        label: 'Redo',
+        accelerator: 'Shift+CommandOrControl+Z',
+        selector: 'redo:'
+      },
+      {
+        type: 'separator'
+      },
+      {
+        label: 'Cut',
+        accelerator: 'CommandOrControl+X',
+        selector: 'cut:'
+      },
+      {
+        label: 'Copy',
+        accelerator: 'CommandOrControl+C',
+        selector: 'copy:'
+      },
+      {
+        label: 'Paste',
+        accelerator: 'CommandOrControl+V',
+        selector: 'paste:'
+      },
+      {
+        label: 'Select All',
+        accelerator: 'CommandOrControl+A',
+        selector: 'selectAll:'
+      }
+    ]
+  },
+  {
+    label: 'Dev',
+    submenu: [
+      {
+        label: 'Reload',
+        accelerator: 'CommandOrControl+R',
+        click: function() { BrowserWindow.getFocusedWindow().reloadIgnoringCache(); }
+      },
+      {
+        label: 'Toggle DevTools',
+        accelerator: 'F12',
+        click: function() { BrowserWindow.getFocusedWindow().toggleDevTools(); }
+      }
+    ]
+  },
+  {
+    label: 'Help',
+    submenu: [{
+      label: 'About RMD',
+      selector: 'orderFrontStandardAboutPanel:'
+    }]
+  }
+];
 
-  // and load the index.html of the app.
+menu = Menu.buildFromTemplate(template);
+
+app.on('ready', function() {
+  mainWindow = new BrowserWindow({width: 1024, height: 768});
+  Menu.setApplicationMenu(menu);
+
   mainWindow.loadUrl('file://' + __dirname + '/index.html');
 
-  // Emitted when the window is closed.
   mainWindow.on('closed', function() {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
     mainWindow = null;
   });
 });
