@@ -20,7 +20,7 @@ var template = [
       {
         label: 'Open',
         accelerator: 'CommandOrControl+O:',
-        click: function () { app.openFile() }
+        selector: 'open:'
       },
       {
         type: 'separator'
