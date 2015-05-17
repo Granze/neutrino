@@ -1,5 +1,4 @@
 import React from 'react';
-import Toolbar from './toolbar.jsx';
 import InputArea from './input-area.jsx';
 import PreviewArea from './preview-area.jsx';
 
@@ -15,7 +14,6 @@ let Editor = React.createClass({
   render: function() {
     return (
       <div className="container">
-        <Toolbar />
         <div className="col">
           <InputArea content={this.state.content} onUserInput={this.handleUserInput} />
         </div>

@@ -22873,8 +22873,6 @@ var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["defau
 
 var React = _interopRequire(require("react"));
 
-var Toolbar = _interopRequire(require("./toolbar.jsx"));
-
 var InputArea = _interopRequire(require("./input-area.jsx"));
 
 var PreviewArea = _interopRequire(require("./preview-area.jsx"));
@@ -22894,7 +22892,6 @@ var Editor = React.createClass({
     return React.createElement(
       "div",
       { className: "container" },
-      React.createElement(Toolbar, null),
       React.createElement(
         "div",
         { className: "col" },
@@ -22911,7 +22908,7 @@ var Editor = React.createClass({
 
 module.exports = Editor;
 
-},{"./input-area.jsx":175,"./preview-area.jsx":176,"./toolbar.jsx":177,"react":157}],175:[function(require,module,exports){
+},{"./input-area.jsx":175,"./preview-area.jsx":176,"react":157}],175:[function(require,module,exports){
 "use strict";
 
 var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
@@ -22965,30 +22962,4 @@ var PreviewArea = React.createClass({
 
 module.exports = PreviewArea;
 
-},{"react":157,"ultramarked":171}],177:[function(require,module,exports){
-"use strict";
-
-var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
-
-var React = _interopRequire(require("react"));
-
-var Header = React.createClass({
-  displayName: "Header",
-
-  render: function render() {
-    return React.createElement(
-      "h1",
-      { className: "toolbar" },
-      "RMD ",
-      React.createElement(
-        "span",
-        { className: "small" },
-        "A simple Markdown editor built with React JS."
-      )
-    );
-  }
-});
-
-module.exports = Header;
-
-},{"react":157}]},{},[1]);
+},{"react":157,"ultramarked":171}]},{},[1]);

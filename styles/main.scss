@@ -2,12 +2,6 @@
   box-sizing: border-box;
 }
 
-$c1: #90163a;
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
 html, body {
   height: 100%;
   margin: 0;
@@ -31,25 +25,6 @@ body {
   float: left;
   height: 100%;
   width: 50%;
-  margin-top: 30px;
-}
-
-.toolbar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  margin: 0;
-  padding: 0 20px;
-  color: #fff;
-  border-bottom: 2px solid darken($c1, 5);
-  background-color: $c1;
-  .small {
-    font-size: 16px;
-    font-weight: normal;
-  }
 }
 
 .input-area {
@@ -57,7 +32,7 @@ body {
   height: 100%;
   padding: 20px;
   border: none;
-  font-family: 'Droid Sans Mono', Courier;
+  font-family: 'Droid Sans Mono', Courier, serif;
   color: #dfdfdf;
   background-color: #333;
 }
