@@ -2,10 +2,21 @@ var app = require('app');
 var BrowserWindow = require('browser-window');
 var dialog = require('dialog');
 var Menu = require('menu');
+var fs = require('fs');
+
 
 require('crash-reporter').start();
 
 var mainWindow = null;
+
+function getFileContent(file) {
+  fs.readFile(file, 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log(data);
+  });
+}
 
 app.on('window-all-closed', function() {
   if (process.platform !== 'darwin') {
@@ -20,7 +31,15 @@ var template = [
       {
         label: 'Open',
         accelerator: 'CommandOrControl+O:',
-        selector: 'open:'
+        click: function () {
+          dialog.showOpenDialog({
+            properties: ['openFile'],
+            filters: [{name: 'Markdown', extensions: ['md']}]
+          }, function (filename) {
+            console.log('file', filename);
+            getFileContent(filename[0]);
+          });
+        }
       },
       {
         type: 'separator'
@@ -94,7 +113,7 @@ var template = [
   }
 ];
 
-menu = Menu.buildFromTemplate(template);
+var menu = Menu.buildFromTemplate(template);
 
 app.on('ready', function() {
   mainWindow = new BrowserWindow({width: 1024, height: 768});
