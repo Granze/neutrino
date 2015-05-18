@@ -1,13 +1,13 @@
-var app = require('app');
-var BrowserWindow = require('browser-window');
-var dialog = require('dialog');
-var Menu = require('menu');
-var fs = require('fs');
-
+var app = require('app'),
+    BrowserWindow = require('browser-window'),
+    dialog = require('dialog'),
+    Menu = require('menu'),
+    fs = require('fs'),
+    template,
+    menu = Menu.buildFromTemplate(template),
+    mainWindow = null;
 
 require('crash-reporter').start();
-
-var mainWindow = null;
 
 function getFileContent(file) {
   fs.readFile(file, 'utf8', function (err,data) {
@@ -18,13 +18,7 @@ function getFileContent(file) {
   });
 }
 
-app.on('window-all-closed', function() {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
-
-var template = [
+template = [
   {
     label: 'RMD',
     submenu:
@@ -120,7 +114,11 @@ var template = [
   }
 ];
 
-var menu = Menu.buildFromTemplate(template);
+app.on('window-all-closed', function() {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
 
 app.on('ready', function() {
   mainWindow = new BrowserWindow({width: 1024, height: 768});
