@@ -22952,7 +22952,7 @@ var PreviewArea = React.createClass({
 
   render: function render() {
     return React.createElement("div", {
-      className: "preview-area",
+      className: "preview-area markdown-body",
       dangerouslySetInnerHTML: {
         __html: marked(this.props.content)
       }

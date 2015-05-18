@@ -27,26 +27,27 @@ body {
   width: 50%;
 }
 
-.input-area {
-  width: 100%;
+.input-area,
+.preview-area {
+  overflow-y: auto;
   height: 100%;
   padding: 20px;
+  color: #333;
+  background-color: #fff;
+  > * {
+    margin-top: 0;
+  }
+}
+
+.input-area {
+  width: 100%;
   border: none;
   font-family: 'Droid Sans Mono', Courier, serif;
-  color: #dfdfdf;
-  background-color: #333;
+  font-size: 110%;
+  border-right: 1px solid #ccc;
+
 }
 
 .preview-area {
-  height: 100%;
-  padding: 20px;
-  background-color: #fff;
-}
 
-footer {
-  text-align: center;
-  padding-top: 20px;
-  a {
-    color: #fff;
-  }
 }
