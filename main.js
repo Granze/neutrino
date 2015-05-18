@@ -26,11 +26,30 @@ app.on('window-all-closed', function() {
 
 var template = [
   {
+    label: 'RMD',
+    submenu:
+    [
+      {
+        label: 'About RMD',
+        selector: 'orderFrontStandardAboutPanel:'
+      },
+      {
+        type: 'separator'
+      },
+      {
+        label: 'Quit',
+        accelerator: 'CommandOrControl+Q',
+        click: function() { app.quit(); }
+      }
+    ]
+  },
+  {
     label: 'File',
-    submenu: [
+    submenu:
+    [
       {
         label: 'Open',
-        accelerator: 'CommandOrControl+O:',
+        accelerator: 'CommandOrControl+O',
         click: function () {
           dialog.showOpenDialog({
             properties: ['openFile'],
@@ -40,14 +59,6 @@ var template = [
             getFileContent(filename[0]);
           });
         }
-      },
-      {
-        type: 'separator'
-      },
-      {
-        label: 'Quit',
-        accelerator: 'CommandOrControl+Q',
-        click: function() { app.quit(); }
       }
     ]
   },
@@ -105,11 +116,7 @@ var template = [
     ]
   },
   {
-    label: 'Help',
-    submenu: [{
-      label: 'About RMD',
-      selector: 'orderFrontStandardAboutPanel:'
-    }]
+    label: 'Help'
   }
 ];
 
