@@ -3,8 +3,6 @@ var app = require('app'),
     dialog = require('dialog'),
     Menu = require('menu'),
     fs = require('fs'),
-    template,
-    menu = Menu.buildFromTemplate(template),
     mainWindow = null;
 
 require('crash-reporter').start();
@@ -113,6 +111,8 @@ template = [
     label: 'Help'
   }
 ];
+
+menu = Menu.buildFromTemplate(template);
 
 app.on('window-all-closed', function() {
   if (process.platform !== 'darwin') {
