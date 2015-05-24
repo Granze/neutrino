@@ -12,6 +12,7 @@ let Editor = React.createClass({
     });
   },
   render: function() {
+    console.log('content', this.props.content);
     return (
       <div className="container">
         <div className="col">

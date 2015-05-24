@@ -1,18 +1,19 @@
 var app = require('app'),
     BrowserWindow = require('browser-window'),
+    ipc = require('ipc'),
     dialog = require('dialog'),
     Menu = require('menu'),
     fs = require('fs'),
-    mainWindow = null;
+    win = null;
 
 require('crash-reporter').start();
 
 function getFileContent(file) {
-  fs.readFile(file, 'utf8', function (err,data) {
+  fs.readFile(file, 'utf8', function (err, data) {
     if (err) {
       return console.log(err);
     }
-    console.log(data);
+    win.send('fileContent', data);
   });
 }
 
@@ -47,7 +48,6 @@ template = [
             properties: ['openFile'],
             filters: [{name: 'Markdown', extensions: ['md']}]
           }, function (filename) {
-            console.log('file', filename);
             getFileContent(filename[0]);
           });
         }
@@ -121,12 +121,12 @@ app.on('window-all-closed', function() {
 });
 
 app.on('ready', function() {
-  mainWindow = new BrowserWindow({width: 1024, height: 768});
+  win = new BrowserWindow({width: 1024, height: 768});
   Menu.setApplicationMenu(menu);
 
-  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+  win.loadUrl('file://' + __dirname + '/index.html');
 
-  mainWindow.on('closed', function() {
-    mainWindow = null;
+  win.on('closed', function() {
+    win = null;
   });
 });

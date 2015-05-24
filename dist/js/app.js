@@ -3,13 +3,22 @@
 
 var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
+//import ipc from 'ipc';
+
 var React = _interopRequire(require("react"));
 
 var Editor = _interopRequire(require("./components/editor.jsx"));
 
 window.React = React;
+var content = "";
 
-React.render(React.createElement(Editor, null), document.body);
+//ipc.on('fileContent', function(message) {
+//  console.log(message);
+//
+//  content = message;
+//});
+
+React.render(React.createElement(Editor, { content: content }), document.getElementById("wrapper"));
 
 },{"./components/editor.jsx":174,"react":157}],2:[function(require,module,exports){
 // shim for using process in browser
@@ -22889,6 +22898,7 @@ var Editor = React.createClass({
     });
   },
   render: function render() {
+    console.log("content", this.props.content);
     return React.createElement(
       "div",
       { className: "container" },
