@@ -13,7 +13,7 @@ function getFileContent(file) {
     if (err) {
       return console.log(err);
     }
-    win.send('fileContent', data);
+    win.webContents.send('fileContent', data);
   });
 }
 

@@ -9,6 +9,12 @@
   </head>
   <body>
     <div id="wrapper"></div>
+    <script>
+      require('ipc').on('fileContent', function(fileData) {
+        var content = fileData;
+        console.log(fileData);
+      });
+    </script>
     <script src="dist/js/app.js"></script>
   </body>
 </html>
