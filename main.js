@@ -1,6 +1,5 @@
 import app from 'app';
 import BrowserWindow from 'browser-window';
-import ipc from 'ipc';
 import dialog from 'dialog';
 import Menu from 'menu';
 import fs from 'fs';
