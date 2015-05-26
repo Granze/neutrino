@@ -1,0 +1,40 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html, body, #wrapper {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Droid Sans', sans-serif; }
+
+#editor {
+  height: 100%; }
+
+.container {
+  height: 100%;
+  overflow: hidden; }
+
+.col {
+  float: left;
+  height: 100%;
+  width: 50%; }
+
+.input-area,
+.preview-area {
+  overflow-y: auto;
+  height: 100%;
+  padding: 20px;
+  color: #333;
+  background-color: #fff; }
+  .input-area > *,
+  .preview-area > * {
+    margin-top: 0; }
+
+.input-area {
+  width: 100%;
+  border: none;
+  font-family: 'Droid Sans Mono', Courier, serif;
+  font-size: 110%;
+  border-right: 1px solid #ccc; }

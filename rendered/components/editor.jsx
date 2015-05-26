@@ -1,3 +1,4 @@
+import ipc from 'ipc';
 import React from 'react';
 import InputArea from './input-area.jsx';
 import PreviewArea from './preview-area.jsx';
@@ -12,7 +13,12 @@ let Editor = React.createClass({
     });
   },
   render: function() {
-    console.log('content', this.props.content);
+    ipc.on('fileContent', fileData => {
+      this.setState({
+        content: fileData
+      });
+    });
+
     return (
       <div className="container">
         <div className="col">

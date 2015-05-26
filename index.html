@@ -5,16 +5,10 @@
     <title>RMD - React Markdown live editor</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Sans+Mono">
     <link rel="stylesheet" href="node_modules/github-markdown-css/github-markdown.css">
-    <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
     <div id="wrapper"></div>
-    <script>
-      require('ipc').on('fileContent', function(fileData) {
-        var content = fileData;
-        console.log(fileData);
-      });
-    </script>
-    <script src="dist/js/app.js"></script>
+    <script src="rendered/index.js"></script>
   </body>
 </html>
