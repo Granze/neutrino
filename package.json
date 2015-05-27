@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Granze/rmd"
+    "url": "https://github.com/Granze/Neutrino"
   },
   "keywords": [
     "editor",
@@ -16,9 +16,9 @@
   "author": "Maurizio Mangione",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Granze/rmd/issues"
+    "url": "https://github.com/Granze/Neutrino/issues"
   },
-  "homepage": "https://github.com/Granze/rmd",
+  "homepage": "https://github.com/Granze/Neutrino",
   "devDependencies": {
     "babel": "^5.4.7",
     "babel-eslint": "^3.1.9",
