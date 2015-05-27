@@ -11,13 +11,13 @@
   "globals": {
   },
   "ecmaFeatures": {
-    "arrowFunctions": true,
+    "modules": true,
     "jsx": true
   },
   "rules": {
-    "strict": [2, "never"],
+    "strict": [1, "never"],
     "indent": [2, 2],
     "quotes": [2, "single"],
-    "eqeqeq": true
+    "eqeqeq": [2, "smart"]
   }
 }
