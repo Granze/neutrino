@@ -47,10 +47,13 @@ export default () => {
           accelerator: 'CommandOrControl+O',
           click: () => {
             dialog.showOpenDialog({
+              title: 'Pick a markdown file to open',
               properties: ['openFile'],
               filters: [{name: 'Markdown', extensions: ['md']}]
             }, filename => {
-              getFileContent(filename[0]);
+              if(filename) {
+                getFileContent(filename[0]);
+              }
             });
           }
         }
