@@ -1,7 +1,7 @@
 {
-  "name": "RMD",
+  "name": "Neutrino",
   "version": "0.1.0",
-  "description": "A simple markdown editor built with React JS and wrapped by Electron",
+  "description": "A simple markdown editor built with React JS and Electron",
   "main": "index.js",
   "repository": {
     "type": "git",
