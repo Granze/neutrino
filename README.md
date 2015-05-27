@@ -1,4 +1,4 @@
-# RMD
-A simple Markdown editor built with React JS.
+# Neutrino
+A simple Markdown editor built with React JS and Electron.
 
-Just a sample project that use [React](http://facebook.github.io/react/index.html).
+##work in progress...

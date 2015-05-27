@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+  },
+  "ecmaFeatures": {
+    "modules": true,
+    "jsx": true
+  },
+  "rules": {
+    "strict": [1, "never"],
+    "indent": [2, 2],
+    "quotes": [2, "single"],
+    "eqeqeq": [2, "smart"]
+  }
+}

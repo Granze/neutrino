@@ -1,5 +1,5 @@
 import React from 'react';
-import marked from 'ultramarked';
+import marked from 'marked';
 
 marked.setOptions({
   ultrasanitize: true
@@ -9,7 +9,7 @@ let PreviewArea = React.createClass({
   render: function () {
     return (
       <div
-        className="preview-area"
+        className="preview-area markdown-body"
         dangerouslySetInnerHTML={{
           __html: marked(this.props.content)
         }}
@@ -18,4 +18,4 @@ let PreviewArea = React.createClass({
   }
 });
 
-module.exports =  PreviewArea;
+module.exports = PreviewArea;

@@ -1,10 +1,13 @@
 import React from 'react';
 
 let InputArea = React.createClass({
-  handleChange: function () {
-    this.props.onUserInput (
+  handleChange: function() {
+    this.props.onUserInput(
       this.refs.textarea.getDOMNode().value
     );
+  },
+  componentDidUpdate: function() {
+    this.refs.textarea.getDOMNode().value = this.props.content;
   },
   render: function() {
     return (
