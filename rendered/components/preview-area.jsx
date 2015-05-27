@@ -1,5 +1,5 @@
 import React from 'react';
-import marked from 'ultramarked';
+import marked from 'marked';
 
 marked.setOptions({
   ultrasanitize: true
@@ -18,4 +18,4 @@ let PreviewArea = React.createClass({
   }
 });
 
-module.exports =  PreviewArea;
+module.exports = PreviewArea;
