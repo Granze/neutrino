@@ -6,6 +6,9 @@ let InputArea = React.createClass({
       this.refs.textarea.getDOMNode().value
     );
   },
+  componentDidUpdate: function() {
+    this.refs.textarea.getDOMNode().value = this.props.content;
+  },
   render: function() {
     return (
       <textarea
