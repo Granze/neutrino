@@ -1,5 +1,5 @@
 import app from 'app';
-import path from 'path'
+import path from 'path';
 import BrowserWindow from 'browser-window';
 import dialog from 'dialog';
 import Menu from 'menu';
