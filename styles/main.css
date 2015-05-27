@@ -7,7 +7,7 @@ html, body, #wrapper {
   padding: 0; }
 
 body {
-  font-family: 'Droid Sans', sans-serif; }
+  font-family: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
 
 #editor {
   height: 100%; }
@@ -35,6 +35,6 @@ body {
 .input-area {
   width: 100%;
   border: none;
-  font-family: 'Droid Sans Mono', Courier, serif;
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size: 110%;
   border-right: 1px solid #ccc; }
