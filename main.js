@@ -57,6 +57,18 @@ export default () => {
               }
             });
           }
+        },
+        {
+          label: 'Save',
+          accelerator: 'CommandOrControl+S',
+          click: () => {
+            dialog.showSaveDialog({
+              title: 'Save markdown file',
+              filters: [{name: 'Markdown', extensions: ['md']}]
+            }, filename => {
+              console.log('saved', filename);
+            });
+          }
         }
       ]
     },
