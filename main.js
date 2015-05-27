@@ -1,4 +1,5 @@
 import app from 'app';
+import path from 'path'
 import BrowserWindow from 'browser-window';
 import dialog from 'dialog';
 import Menu from 'menu';
@@ -133,7 +134,7 @@ export default () => {
     win = new BrowserWindow({width: 1024, height: 768});
     Menu.setApplicationMenu(menu);
 
-    win.loadUrl('file://' + __dirname + '/index.html');
+    win.loadUrl(path.join('file://', __dirname, '/index.html'));
 
     win.on('closed', () => {
       win = null;
