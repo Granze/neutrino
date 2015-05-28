@@ -18,6 +18,9 @@ let Editor = React.createClass({
         content: fileData
       });
     });
+    ipc.on('saveFile', () => {
+      ipc.send('contentToSave', this.state.content);
+    });
 
     return (
       <div className="container">

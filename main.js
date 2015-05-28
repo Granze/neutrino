@@ -1,5 +1,6 @@
 import app from 'app';
 import path from 'path';
+import ipc from 'ipc';
 import BrowserWindow from 'browser-window';
 import dialog from 'dialog';
 import Menu from 'menu';
@@ -51,9 +52,9 @@ export default () => {
               title: 'Pick a markdown file to open',
               properties: ['openFile'],
               filters: [{name: 'Markdown', extensions: ['md']}]
-            }, filename => {
-              if(filename) {
-                getFileContent(filename[0]);
+            }, fileName => {
+              if(fileName) {
+                getFileContent(fileName[0]);
               }
             });
           }
@@ -65,8 +66,16 @@ export default () => {
             dialog.showSaveDialog({
               title: 'Save markdown file',
               filters: [{name: 'Markdown', extensions: ['md']}]
-            }, filename => {
-              console.log('saved', filename);
+            }, fileName => {
+              win.send('saveFile');
+              ipc.on('contentToSave', function(event, content) {
+                fs.writeFile(fileName, content, function (err) {
+                  if (err) {
+                    return console.log(err);
+                  }
+                });
+              });
+
             });
           }
         }
