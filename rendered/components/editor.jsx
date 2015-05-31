@@ -12,7 +12,7 @@ let Editor = React.createClass({
       content: content
     });
   },
-  render: function() {
+  componentDidMount: function() {
     ipc.on('fileContent', fileData => {
       this.setState({
         content: fileData
@@ -21,7 +21,8 @@ let Editor = React.createClass({
     ipc.on('saveFile', () => {
       ipc.send('contentToSave', this.state.content);
     });
-
+  },
+  render: function() {
     return (
       <div className="container">
         <div className="col">
