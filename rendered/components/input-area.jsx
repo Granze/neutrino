@@ -1,25 +1,34 @@
 import React from 'react';
+import ace from 'brace';
+import 'brace/mode/markdown';
+import 'brace/theme/github';
+
+let editor;
 
 let InputArea = React.createClass({
+
   handleChange: function() {
+    console.log('change');
     this.props.onUserInput(
-      this.refs.textarea.getDOMNode().value
+      editor.setValue(this.props.content)
     );
   },
+  componentDidMount: function() {
+    editor = ace.edit('input');
+    editor.getSession().setMode('ace/mode/markdown');
+    editor.setTheme('ace/theme/github');
+    editor.setFontSize(22);
+    editor.setValue(this.props.content);
+  },
   componentDidUpdate: function() {
-    this.refs.textarea.getDOMNode().value = this.props.content;
+    editor.setValue(this.props.content);
   },
   render: function() {
     return (
-      <textarea
-        onChange={this.handleChange}
-        ref="textarea"
-        id="input"
-        className="input-area"
-        defaultValue={this.props.content}
-      />
+      <div onChange={this.handleChange} id="input" className="input-area"></div>
     );
   }
+
 });
 
 module.exports = InputArea;

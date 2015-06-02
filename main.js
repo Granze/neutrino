@@ -69,13 +69,13 @@ export default () => {
             }, fileName => {
               win.send('saveFile');
               ipc.on('contentToSave', function(event, content) {
+                console.log(path);
                 fs.writeFile(fileName, content, function (err) {
                   if (err) {
                     return console.log(err);
                   }
                 });
               });
-
             });
           }
         }

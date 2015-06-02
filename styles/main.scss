@@ -22,6 +22,7 @@ body {
 }
 
 .col {
+  position: relative;
   float: left;
   height: 100%;
   width: 50%;
@@ -40,12 +41,10 @@ body {
 }
 
 .input-area {
+  position: absolute;
   width: 100%;
-  border: none;
-  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size: 110%;
   border-right: 1px solid #ccc;
-
 }
 
 .preview-area {
