@@ -13,9 +13,9 @@ let InputArea = React.createClass({
     editor.setTheme('ace/theme/github');
     editor.setFontSize(22);
     editor.setValue(this.props.content);
-    editor.on('change', function() {
+    editor.on('change', () => {
       this.props.onUserInput(editor.getValue());
-    }.bind(this));
+    });
   },
   render: function() {
     return (
