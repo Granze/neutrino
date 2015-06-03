@@ -1,10 +1,6 @@
 import React from 'react';
 import marked from 'marked';
 
-marked.setOptions({
-  ultrasanitize: true
-});
-
 let PreviewArea = React.createClass({
   render: function () {
     return (
